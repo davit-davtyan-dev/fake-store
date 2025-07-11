@@ -30,9 +30,16 @@ export default function ProductCard({ product }: ProductCardProps) {
         <CardDescription>{category}</CardDescription>
       </CardHeader>
       <CardContent className="px-2 py-4">
-        <div className="relative w-full h-32">
-          <Image src={image} alt={title} fill className="object-contain mb-4" />
-        </div>
+        <Link href={`/products/${id}`}>
+          <div className="relative w-full h-32">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-contain mb-4"
+            />
+          </div>
+        </Link>
       </CardContent>
       <CardFooter className="flex justify-between items-center">
         <span className="font-semibold text-lg">${price}</span>
