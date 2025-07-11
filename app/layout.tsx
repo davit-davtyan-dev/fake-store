@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -28,7 +29,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="px-8 sticky top-0 flex items-center shadow-md bg-white z-10">
-          <h1 className="text-3xl font-bold my-8">Fake Store</h1>
+          <Link href="/">
+            <h1 className="text-3xl font-bold my-8">Fake Store</h1>
+          </Link>
         </header>
         <main className="p-8 row-start-2 w-full z-0">{children}</main>
       </body>

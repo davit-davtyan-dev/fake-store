@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardContent,
@@ -8,20 +7,23 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
-import type { Product } from "../types";
+import type { Product } from "@/types/Product";
 
 interface ProductCardProps {
   product: Product;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { title, category, image, price, rating } = product;
+  const { id, title, category, image, price, rating } = product;
 
   return (
     <Card className="justify-between">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle>
+          <Link href={`/products/${id}`}>{title}</Link>
+        </CardTitle>
         <CardDescription>{category}</CardDescription>
       </CardHeader>
       <CardContent className="p-4">

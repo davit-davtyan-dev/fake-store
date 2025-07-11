@@ -1,9 +1,8 @@
-import ProductCard from "./components/ProductCard";
-import { Product } from "./types";
+import ProductCard from "../components/ProductCard";
+import { getAllProducts } from "@/lib/products";
 
 export default async function Home() {
-  const res = await fetch("https://fakestoreapi.com/products");
-  const products: Array<Product> = await res.json();
+  const products = await getAllProducts();
 
   return (
     <div>
